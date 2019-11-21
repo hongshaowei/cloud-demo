@@ -1,0 +1,16 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native # "native" is used when the native profile is active, for local tests with a classpath repo or resources/config
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: file://path/to/localGitRepo | https://git repo url
+#          searchPaths: subfolder name if there's any
+#        native:
+#          searchLocations: classpath:config/

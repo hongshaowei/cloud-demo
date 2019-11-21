@@ -1,0 +1,20 @@
+server:
+  port: 8763
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  instance:
+    hostname: eureka-peer3 # add records to /etc/hosts for local testing
+    appName: ServiceRegistryCluster
+    preferIpAddress: false # use hostname not ip
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-peer1:8761/eureka/, http://eureka-peer2:8762/eureka/ # three eureka server
+  server:
+      waitTimeInMsWhenSyncEmpty: 0
+      enableSelfPreservation: false
