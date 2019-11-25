@@ -1,0 +1,13 @@
+server:
+  port: 7777
+  servlet: 
+    contextPath: /uaa
+    
+spring:
+  application:
+    name: auth-server
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-peer1:8761/eureka/, http://eureka-peer2:8762/eureka/, http://eureka-peer3:8763/eureka/
