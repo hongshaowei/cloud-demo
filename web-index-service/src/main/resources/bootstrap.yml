@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: web-index
-  cloud:
-    config:
-      uri: http://localhost:9999

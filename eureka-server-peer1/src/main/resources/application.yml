@@ -1,3 +1,3 @@
-eureka:
-  server:
-    peer-eureka-nodes-update-interval-ms: 10000 # default 10分鐘(600000)，這裡為為了驗證改為10秒
+#eureka:
+#  server:
+#    peer-eureka-nodes-update-interval-ms: 10000 # default 10分鐘(600000)，這裡為為了驗證改為10秒

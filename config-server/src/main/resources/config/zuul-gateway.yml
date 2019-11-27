@@ -6,32 +6,29 @@ spring:
     name: zuul-gateway
     
 zuul:
-  sensitive-headers:
   routes:
-#    auth-server:
-#      path: /uaa/**
-#      serviceId: auth-server
-    web-index:
-      stripPrefix: false
-      path: /index/**
-      serviceId: web-index
+    user-service:
+      path: /test/**
+      serviceId: test-service
+      sensitive-headers:
+#      stripPrefix: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-peer1:8761/eureka/, http://eureka-peer2:8762/eureka/, http://eureka-peer3:8763/eureka/
+    fetchRegistry: true
 
 security:
   basic:
     enabled: false
   oauth2:
     client:
-      access-token-uri: http://localhost:7777/uaa/oauth/token #token endpoint
+      access-token-uri: http://localhost:7777/uaa/oauth/token # token endpoint
       user-authorization-uri: http://localhost:7777/uaa/oauth/authorize # authorization endpoint
       client-id: zuul-gateway # OAuth2 client ID
       client-secret: secret # OAuth2 client secret
-      useCurrentUri: false
     resource:
       jwt:
-        key-value: springcloud13 #symmetric encrytion, default HS256
+        key-value: springcloud123 #symmetric encrytion, default HS256
     
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://eureka-peer1:8761/eureka/, http://eureka-peer2:8762/eureka/, http://eureka-peer3:8763/eureka/
-    fetchRegistry: true
